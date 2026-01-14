@@ -105,6 +105,64 @@ A Streamlit-based web interface provides:
 
 The UI is designed for simplicity, responsiveness, and ease of use.
 
+## Getting Started
 
+Follow the steps below to set up and run the project locally.
 
+---
 
+### Prerequisites
+
+Ensure the following are installed on your system:
+
+- **Python 3.10 or higher**
+- **Ollama** (for running LLaMA 3.2 locally)
+- **MongoDB** (Local or MongoDB Atlas)
+- **ChromaDB** (For Vector Data Storage)
+- **Git**
+- (Optional) **Local GPU** for faster inference
+
+---
+
+### Installation
+
+1. **Clone the repository**
+    ```bash
+    git clone <repository-url>
+    ```
+
+2. **Install Python dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **LLM Setup**
+   - Install Ollama from: https://ollama.com
+   - Pull the required model:
+     ```bash
+     ollama pull llama3.2
+     ```
+     ```bash
+     ollama serve
+     ```
+
+4. **Database Setup**
+    - MongoDB can be configured in either of the following ways:
+        Run MongoDB locally
+        Use MongoDB Atlas and update the connection URI in the project
+
+5. **Running the Application**
+    - Start the Streamlit application using the command below:
+    ```bash
+     streamlit run main.py
+     ```
+
+    The Application will be available at `http://localhost:8501`
+
+## 📞 Support
+
+- **Issues:** Create GitHub issues for bugs or feature requests
+- **Discussions:** Use GitHub Discussions for questions and ideas
+- **Documentation:** Check the codebase for implementation details
+
+## 👨🏻‍💻 Authors
+Meet Patel 
