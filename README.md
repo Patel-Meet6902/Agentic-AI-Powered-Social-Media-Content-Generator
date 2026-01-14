@@ -24,6 +24,18 @@
   <img src="assets/New_chat_creation.png" width="300"/>
 </p>
 
+### 3. Technology Stack
+
+| Components         | Technology              | Purpose                         |
+|--------------------|-------------------------|----------------------------------|
+| Frontend           | Streamlit               | Interactive Web Interface        |
+| Backend            | Python                  | Application Logic                |
+| Primary Database   | MongoDB                 | Chat and Message Database        |
+| Vector Database    | ChromaDB                | Context Retrieval                |
+| LLM                | Ollama (Llama3.2)       | Content Generation               |
+| Agentic Workflow   | LangGraph               | Multi-agent Workflows            |
+| LLM Framework      | LangChain               | LLM Abstractions                 |
+
 
 
 
