@@ -2,6 +2,8 @@
 
 ## 📌 Overview
 
+An intelligent agentic AI system that automates social media content generation using LangGraph workflows and Llama 3.2. The system extracts insights from PDFs and YouTube videos, maintains conversational context through vector-based memory, and generates platform-optimized content for LinkedIn and Medium with minimal human intervention.
+
 ## 🚀 Key Features
 
 - 📝 Multi-platform content generation (LinkedIn, Medium)
@@ -166,3 +168,4 @@ Ensure the following are installed on your system:
 
 ## 👨🏻‍💻 Authors
 Meet Patel 
+
