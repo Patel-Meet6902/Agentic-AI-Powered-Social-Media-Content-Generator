@@ -13,13 +13,17 @@
 
 # UI
 
-<img width="1440" height="778" alt="Image" src="https://github.com/user-attachments/assets/991eafff-e738-4bf0-8838-df22ff2efc86" />
+<p align="center">
+  <img src="assets/chatUI.png" width="600"/>
+</p>
 
-# Chat Creation 
+# Chat Creation and Document Ingestion
 
-<img width="499" height="354" alt="Image" src="https://github.com/user-attachments/assets/0d5f934e-8e31-4d8d-8489-a23d7b169263" />
+<p align="center">
+  <img src="assets/File_Ingestion.png" width="300"/>
+  <img src="assets/New_chat_creation.png" width="300"/>
+</p>
 
-# Document Ingestion
 
-<img width="499" height="354" alt="Image" src="https://github.com/user-attachments/assets/1ee925a4-31b5-4acd-9cb0-9473ba0036c9" />
+
 
