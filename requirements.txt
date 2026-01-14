@@ -1,0 +1,16 @@
+langchain
+langchain-community
+langgraph
+langsmith
+llama-index
+openai
+transformers
+accelerate
+torch
+huggingface-hub
+safetensors
+bitsandbytes
+pypdf
+ollama
+streamlit
+youtube_transcript_api
