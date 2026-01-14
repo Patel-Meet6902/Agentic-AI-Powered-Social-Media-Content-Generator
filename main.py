@@ -1,6 +1,6 @@
 import streamlit as st
 from datetime import datetime
-from Helper import (extract_pdf_content, extract_youtube_transcript,generate_medium_blog,
+from Workflow import (extract_pdf_content, extract_youtube_transcript,generate_medium_blog,
     generate_linkedin_post,
     process_user_message_with_context
 )
