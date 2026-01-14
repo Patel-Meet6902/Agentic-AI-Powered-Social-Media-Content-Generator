@@ -308,7 +308,7 @@ with st.sidebar:
             platform = chat.get("platform", "General")
             
 
-            col1, col2 = st.columns([6, 1])
+            col1, col2 = st.columns([6,2])
             
             with col1:
                 is_active = st.session_state.current_chat_id == chat_id
