@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <div id = sidebar-header>
+            <h2>💬 Chats</h2>
+            <p>AI Content generator</p>
+        </div>
+
+        <div id="sidebar-options">
+            <button class="btn btn-first" id="chat-creation" onclick="openchatmodal()">➕ New Chat </button>
+            <button class="btn" id="document-upload" onclick="openuploadmodel()" disabled>📤 Upload / URL</button>
+        </div>
+
+        <div id="list-of-chats">
+            <div class="emptychat" id="emptylist"> No chats yet. <br> Create one to start</div>
+        </div>
+    </aside>
+
+
+    <main id="main">
+        <div id="topbar">
+            <h1 id="projecttitle">🤖 AI Social Media Content Generator</h1>
+            <span id="subtitle"></span>
+        </div>
+
+        <div id="message-area">
+            <div id="welcome">
+                <div class="icon">🤖</div>
+                <h2>Welcome!</h2>
+                <p>Create a new chat or select an existing one to start generating content for LinkedIn or Medium.</p>
+            </div>
+        </div>
+
+        <div id="inputarea">
+            <textarea
+                id="msg-input"
+                placeholder="Select a chat to start typing…"
+                rows="1"
+                disabled
+            ></textarea>
+            <button class="btn-send" id="send-btn" onclick="sendmessage()" disabled>➤</button>
+        </div>
+    </main>
+
+
+    <div class="modalstructure" id="chatmodal">
+        <div class="modal">
+            <h3>➕ Create New Chat</h3>
+            <div class="commonform">
+                <label>CHAT NAME</label>
+                <input type="text" placeholder="Please Enter Your Chat Name" id="chatname"/> 
+            </div>
+            <div class="commonform">
+                <label>Platform</label>
+                <select id="platformname">
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Medium">Medium</option>
+                </select>
+            </div>
+
+            <div class="modalbuttons">
+                <button class="btn" onclick="closechatmodal()">Cancel</button>
+                <button class="btn btn-first" onclick="createchat()">Create</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modalstructure" id="uploadmodal">
+        <div class="modal">
+            <h3>📤 Upload Content</h3>
+            <div class="tabs">
+                <button class="tabbtn" onclick="switchtab('pdf')">📄 Upload PDF</button>
+                <button class="tabbtn" onclick="switchtab('url')">🔗 Paste Youtube URL</button>
+            </div>
+
+            <div class="tab-pane" id="tab-pdf">
+                <div id="drop-zone" onclick="document.getElementById('pdf-file').click()"
+                    ondragover="event.preventDefault();this.classList.add('drag-over')"
+                    ondragleave="this.classList.remove('drag-over')"
+                    ondrop="handleDrop(event)">
+                    <div class="dz-icon">📄</div>
+                    <div>Click or drag & drop a PDF here</div>
+                    <div id="file-name"></div>
+                </div>
+                <input type="file" id="pdf-file" accept=".pdf" style="display:none"/>
+                <div class="modalbuttons">
+                    <button class="btn" onclick="closeuploadmodel">Cancel</button>
+                    <button class="btn btn-first" id="upload-pdf-btn" onclick="uploadpdf()" disabled>Upload PDF</button>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab-url">
+                <div class="commonform">
+                    <label>YouTube URL</label>
+                    <input type="text" id="yt-url" placeholder="https://youtube.com/watch?v=..." />
+                </div>
+                <div class="modalbuttons">
+                    <button class="btn " onclick="closeuploadmodel()">Cancel</button>
+                    <button class="btn btn-first" onclick="submiturl()">Extract Transcript</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+
+    <script src="App.js"></script>
+    
+</body>
+</html>
