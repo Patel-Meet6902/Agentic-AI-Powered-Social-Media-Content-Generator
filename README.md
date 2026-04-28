@@ -11,28 +11,36 @@ An intelligent agentic AI system that automates social media content generation 
 - 🧠 Context-aware generation with RAG
 - 🔄 Multi-stage agentic workflows with LangGraph
 - 💾 Persistent memory with ChromaDB
-- 🎨 Interactive Streamlit UI
+- 🌐 REST API with FastAPI
+- 🎨 Interactive HTML/CSS/JS UI
+
 
 # UI
 
 <p align="center">
-  <img src="assets/chatUI.png" width="600"/>
+  <img src="assets/Main_Interface.png" width="600"/>
 </p>
 
-# Chat Creation and Document Ingestion
+
+# Content Generation
 
 <p align="center">
-  <img src="assets/File_Ingestion.png" width="300"/>
-  <img src="assets/New_chat_creation.png" width="300"/>
+  <img src="assets/Medium_Blog_Generation.png" width="300"/>
 </p>
 
+# Document Upload and chat Creation
+
+<p align="center">
+  <img src="assets/Chat_Creation.png" width="300"/>
+  <img src="assets/Document_Upload.png" width="300">
+</p>
 
 ###  Technology Stack
 
-| Components         | Technology              | Purpose                         |
+| Components         | Technology              | Purpose                          |
 |--------------------|-------------------------|----------------------------------|
-| Frontend           | Streamlit               | Interactive Web Interface        |
-| Backend            | Python                  | Application Logic                |
+| Frontend           | HTML, CSS, JavaScript   | Interactive Web Interface        |
+| Backend            | FastAPI (Python)        | REST API                         |
 | Primary Database   | MongoDB                 | Chat and Message Database        |
 | Vector Database    | ChromaDB                | Context Retrieval                |
 | LLM                | Ollama (Llama3.2)       | Content Generation               |
@@ -98,14 +106,16 @@ The system runs **LLaMA 3.2 locally via Ollama**, enabling:
 
 ---
 
-### 8. Interactive Streamlit User Interface
-A Streamlit-based web interface provides:
-- Chat creation and management
-- PDF & YouTube content upload
-- Real-time content generation
-- Session control and chat deletion
+### 8. Web-Based User Interface (HTML, CSS, JavaScript)
 
-The UI is designed for simplicity, responsiveness, and ease of use.
+A custom-built web interface using HTML, CSS, and JavaScript provides:
+
+- Chat creation and management
+- PDF and YouTube content upload
+- Real-time content generation via API calls
+- Session handling and chat deletion
+
+The frontend communicates with a FastAPI backend through RESTful APIs, ensuring a responsive and interactive user experience. The interface is designed for simplicity, usability, and efficient content interaction.
 
 ## Getting Started
 
@@ -153,12 +163,22 @@ Ensure the following are installed on your system:
         Use MongoDB Atlas and update the connection URI in the project
 
 5. **Running the Application**
-    - Start the Streamlit application using the command below:
+    1. **Start Ollama**
     ```bash
-     streamlit run main.py
-     ```
+      ollama serve
+    ```
 
-    The Application will be available at `http://localhost:8501`
+    2. **Start Backend**
+    ```bash
+      cd Backend
+      python3 -m uvicorn fast:app --reload
+    ```
+
+    3. **Open Frontend**
+      - Open `Frontend/Index.html` with Live Server in VS Code
+      - OR open directly in browser
+
+      The API will be available at `http://localhost:8000`
 
 ## 📞 Support
 
