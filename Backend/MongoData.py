@@ -2,14 +2,21 @@ from pymongo import MongoClient
 from datetime import datetime
 import os
 from typing import List, Dict, Any
+from dotenv import load_dotenv
 
 import chromadb
 from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 
-client = MongoClient(os.getenv("MONGO_URI", "mongodb://localhost:27017/"))
-DB_name = "socialmedia_app"
-db = client[DB_name]
+
+load_dotenv()
+
+MONGO_URI = os.getenv("MONGO_URI")
+DB_NAME   = os.getenv("DB_NAME")
+
+client = MongoClient(MONGO_URI)
+
+db = client[DB_NAME]
 chats_collection = db["chats"]
 messages_collection = db["messages"]
 

@@ -13,6 +13,12 @@ from langgraph.checkpoint.memory import MemorySaver
 
 from MongoData import vector_store, get_or_load_chat_context
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+OLLAMA_URL = os.getenv("OLLAMA_URL")
 
 def extract_pdf_content(pdf_file):
     try:
@@ -71,7 +77,7 @@ def create_medium_blog_workflow():
     llm = ChatOllama(
         model="llama3.2", 
         temperature=0.7,
-        base_url="http://localhost:11434"  
+        base_url=OLLAMA_URL  
     )
     def analyze_and_outline(state: BlogState) -> BlogState:
         relevant_context = vector_store.get_relevant_context(
@@ -256,7 +262,7 @@ def process_user_message_with_context(
         llm = ChatOllama(
             model="llama3.2",
             temperature=0.7,
-            base_url="http://localhost:11434"
+            base_url=OLLAMA_URL
         )
         
         prompt = f"""You are a helpful AI assistant specializing in content creation for social media.
